@@ -50,24 +50,24 @@ above5Func =
 
 boolTranslateFunc : Test
 boolTranslateFunc =
-    describe "boolTranslate function"
-        [ test "boolTranslate true" <|
+    describe "ifBoolTranslate function"
+        [ test "ifBoolTranslate true" <|
             \_ ->
-                boolTranslate True
+                ifBoolTranslate True
                     |> Expect.equal "Verdadero"
-        , test "boolTranslate false" <|
+        , test "ifBoolTranslate false" <|
             \_ ->
-                boolTranslate False
+                ifBoolTranslate False
                     |> Expect.equal "Falso"
         ]
 
 
 numberSignFunc : Test
 numberSignFunc =
-    describe "numberSign function"
-        [ fuzz int "numberSign accept int" <|
+    describe "ifNumberSign function"
+        [ fuzz int "ifNumberSign accept int" <|
             \num ->
-                numberSign num
+                ifNumberSign num
                     |> Expect.equal
                         (if num == 0 then
                             "Neutral"
@@ -78,9 +78,9 @@ numberSignFunc =
                          else
                             "Negative"
                         )
-        , fuzz niceFloat "numberSign accept float" <|
+        , fuzz niceFloat "ifNumberSign accept float" <|
             \num ->
-                numberSign num
+                ifNumberSign num
                     |> Expect.equal
                         (if num == 0 then
                             "Neutral"
